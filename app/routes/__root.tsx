@@ -15,8 +15,11 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'TanStack Start Starter',
+        title: 'Gramina | Tech for Resilient Farms',
       },
+      {
+        favicon: '/images/logo2.svg',
+      }
     ],
     links: [
       {
@@ -40,9 +43,10 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
   return (
     <html>
       <head>
+        <link rel="icon" href="/images/logo.svg" />
         <Meta />
       </head>
-      <body>
+      <body className='font-mono'>
         {children}
         <Scripts />
       </body>
