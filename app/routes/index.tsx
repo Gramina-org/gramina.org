@@ -2,10 +2,12 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Target, Wifi, Zap } from 'lucide-react'
-import { Navbar } from '@/components/navbar'
+import { MainNav, Navbar } from '@/components/main-nav'
 import { Waves } from '@/components/ui/waves-background'
 import { Card } from '@/components/ui/card'
 import { Footer } from '@/components/footer'
+import { UserNav } from '@/components/user-nav'
+import { Search } from '@/components/nav-search'
 
 export const Route = createFileRoute('/')({
   component: Landing,
@@ -27,8 +29,18 @@ function Landing() {
   const theme = "light";
   return (
     <>
-      <Navbar  />
-      <section className="overflow-hidden py-48 relative bg-white">
+        <div className="hidden flex-col md:flex">
+        <div className="border-b">
+          <div className="flex h-16 items-center px-4">
+            <MainNav className="mx-6" />
+            <div className="ml-auto flex items-center space-x-4">
+              <Search />
+              
+            </div>
+          </div>
+        </div>
+        </div>
+        <section className="overflow-hidden py-48 relative bg-white">
         <div className="absolute inset-0 z-0 h-full max-h-full">
           <Waves
             lineColor={theme === "dark" ? "rgba(255, 255, 255, 0.3)" : "rgba(0, 0, 0, 0.3)"}
@@ -50,14 +62,14 @@ function Landing() {
               <span className="mx-auto flex size-16 items-center justify-center rounded-full border md:size-20">
                 {icon}
               </span>
-              <h2 className="mx-auto max-w-screen-lg text-balance text-center text-4xl font-medium md:text-7xl">
-                Harnessing Data, Growing Hope:
+              <h2 className="mb-2 mx-auto max-w-screen-lg text-balance text-center text-4xl font-medium md:text-7xl">
+                Harnessing Data, Growing Hope
               </h2>
-              <h3 className="mx-auto max-w-screen-lg text-balance text-center text-2xl font-semibold md:text-5xl">
+              <h3 className="mb-4 mx-auto max-w-screen-lg text-balance text-center text-2xl font-semibold md:text-3xl">
                 Low-Cost Tech for Resilient Farms
               </h3>
               <p className="mx-auto max-w-screen-md text-center text-muted-foreground md:text-lg">
-                We believe every farmer deserves the tools to thrive. Our affordable, intuitive technologies empower rural and Global South communities to boost crop yields, reduce waste, and secure food futures—without breaking the bank.
+                We believe every farmer deserves the tools to thrive. Our affordable, intuitive technologies empower rural and Global South communities to boost crop yields, reduce waste, and secure food futures.
               </p>
               <div className="flex flex-col items-center justify-center gap-5 pb-12 pt-5">
                 <Button size="lg" className='bg-white' asChild>

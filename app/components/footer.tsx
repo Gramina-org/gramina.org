@@ -2,9 +2,9 @@ import { Footerdemo } from "@/components/ui/footer-section";
 
 function Footer() {
   return (
-    <div className="block bg-white py-4">
+    <footer className="w-screen relative left-[50%] right-[50%] -mx-[50vw] bg-white">
       <Footerdemo />
-    </div>
+    </footer>
   );
 }
 
